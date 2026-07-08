@@ -39,26 +39,23 @@ Then open the local URL Vite prints (usually http://localhost:5173).
 - The plot background has a subtle vertical rule pattern suggesting lane
   boards.
 
+## AI Collaboration
+
+This project was completed as part of Anthropic's **AI Fluency: Framework & Foundations** course, which focuses on responsible human-AI collaboration.
+
+Claude AI served as my primary development assistant, generating much of the application's codebase and assisting with data organization. My responsibilities included defining the project's scope, researching and selecting the bowling balls, cleaning and validating the dataset, managing version control, testing the application, identifying UI issues, and refining the final product.
+
+This project demonstrates my ability to effectively direct AI tools while maintaining responsibility for project planning, data quality, testing, and final implementation decisions.
+
 ## Known simplifications (worth revisiting)
 
 - `length_score` is a judgment-call mapping from messy free text (e.g.
   "Medium (early/blendy)") onto a 1–6 scale. It's a reasonable
   approximation for plotting, not a precise measurement — worth
   sanity-checking against real ball behavior as you go.
-- Two Radical balls (Evil Eye / Evil Eye Pearl) have "tunable" differential
-  specs. The plotted/numeric value uses the base spec; the full original
-  text is preserved in `differential_raw` / `intermediate_differential_raw`
-  and shown in the tooltip.
-- The DV8 "Verge" naming question flagged earlier in the project (5
-  related entries: Verge, Verge Solid, Verge Hybrid, Damn Good Verge,
-  Damn Good Verge Pearl) hasn't been resolved — all 5 are in the dataset
-  as-is.
 
 ## Next steps (per project plan)
 
-1. Sanity-check the dot plot placement against real-world ball behavior.
-2. Build the trajectory graph (second visualization) — approximate
+1. Build the trajectory graph (second visualization) — approximate
    physics curve down a 60ft lane based on RG/diff/coverstock/length/
    hook/backend.
-3. Resolve the open data flags (Verge duplicate question, overseas-ball
-   keep/drop, 15lb standard confirmation, notes column fate).
