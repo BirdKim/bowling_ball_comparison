@@ -36,7 +36,7 @@ export function BallCard({ ball, scores, onToggle, selected, colorIndex }) {
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6px 14px", fontSize: 11, color: "#B8AC93" }}>
         <span>RG {ball.rg != null ? ball.rg.toFixed(3) : "—"}</span>
         <span>Diff {ball.differential != null ? ball.differential.toFixed(3) : "—"}</span>
-        <span>iDiff {ball.intermediate_differential != null ? ball.intermediate_differential.toFixed(3) : "—"}</span>
+        <span>Mass Bias {ball.intermediate_differential != null ? ball.intermediate_differential.toFixed(3) : "—"}</span>
         <span>{ball.finish_grit === "Polish" ? "Polish" : `${ball.finish_grit ?? "—"} grit`}</span>
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: 4, marginTop: 2 }}>
