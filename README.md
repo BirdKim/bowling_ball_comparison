@@ -1,13 +1,18 @@
 # Ball Motion Explorer
 
-A React + Vite app for comparing bowling balls by their motion characteristics. The interface lets you browse a curated dataset, filter by brand, and compare up to six balls side by side through a radar-style motion chart.
+A React + Vite app for comparing bowling balls by their motion characteristics. The interface lets you browse a curated dataset, filter by brand, toggle to only view selected balls, and compare up to six balls side by side through a radar-style motion chart.
 
 ## What the app does
 
 - Search and filter the ball catalog by name, brand, or coverstock
+- Toggle between the full catalog and a filtered view of the balls currently selected for comparison
 - Compare selected balls with a radar chart across length, midlane read, flare, backend, and hook
 - View each ball's core specs such as RG, differential, and intermediate differential
 - Score motion traits using a lightweight heuristic model based on the ball's physical attributes
+
+## Current dataset
+
+The app currently loads 145 bowling balls across 9 brands, including 900 Global, Brunswick, DV8, Ebonite, Hammer, Motiv, Radical, Roto Grip, and Storm.
 
 ## Tech stack
 
@@ -38,7 +43,7 @@ src/
 
 ## Data and scoring
 
-The ball catalog lives in [src/data/balls.json](src/data/balls.json). Each ball includes specs such as RG, differential, intermediate differential, finish grit, and coverstock type. Some aspect of the finish grit was hard to normalize, so I estimated that the balls that had a Polish finish was estimated to have 4000 grit finish, Reacta Gloss finish was estimated to have 5000 grit finish, and Compound finish was estimated to have 3000 grit finish.
+The ball catalog lives in [src/data/balls.json](src/data/balls.json). Each ball includes specs such as RG, differential, intermediate differential, finish grit, and coverstock type. Finish values were normalized where needed, including Polish as roughly 4000 grit, Reacta Gloss as roughly 5000 grit, and Compound as roughly 3000 grit.
 The scoring logic in [src/lib/ScoreBall.js](src/lib/ScoreBall.js) normalizes the values and converts them into motion scores for the comparison view.
 
 ## Development

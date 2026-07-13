@@ -11,6 +11,7 @@ export default function App() {
   const [query, setQuery] = useState("");
   const [brand, setBrand] = useState("All");
   const [selected, setSelected] = useState([]);
+  const [showSelectedOnly, setShowSelectedOnly] = useState(false);
 
   const brands = useMemo(() => ["All", ...Array.from(new Set(BALLS.map(b => b.brand))).sort()], []);
 
@@ -21,9 +22,10 @@ export default function App() {
       const matchesBrand = brand === "All" || ball.brand === brand;
       const q = query.trim().toLowerCase();
       const matchesQuery = !q || ball.ball_name.toLowerCase().includes(q) || ball.brand.toLowerCase().includes(q) || ball.coverstock.toLowerCase().includes(q);
-      return matchesBrand && matchesQuery;
+      const matchesSelected = !showSelectedOnly || selected.some(b => b.ball_name === ball.ball_name && b.brand === ball.brand);
+      return matchesBrand && matchesQuery && matchesSelected;
     });
-  }, [scored, brand, query]);
+  }, [scored, brand, query, showSelectedOnly, selected]);
 
   function toggle(ball) {
     setSelected(prev => {
@@ -68,12 +70,12 @@ export default function App() {
       </header>
 
       <FilterBar
-        query={query}
-        onQueryChange={setQuery}
-        brand={brand}
-        onBrandChange={setBrand}
-        brands={brands}
-        resultCount={filtered.length}
+        query={query} onQueryChange={setQuery}
+        brand={brand} onBrandChange={setBrand}
+        brands={brands} resultCount={filtered.length}
+        showSelectedOnly={showSelectedOnly}
+        onToggleShowSelectedOnly={() => setShowSelectedOnly(!showSelectedOnly)}
+        selectedCount={selected.length}
       />
 
       <ComparisonPanel selected={selected} radarData={radarData} onToggle={toggle} />
