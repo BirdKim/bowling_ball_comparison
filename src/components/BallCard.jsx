@@ -37,7 +37,7 @@ export function BallCard({ ball, scores, onToggle, selected, colorIndex }) {
         <span>RG {ball.rg != null ? ball.rg.toFixed(3) : "—"}</span>
         <span>Diff {ball.differential != null ? ball.differential.toFixed(3) : "—"}</span>
         <span>Mass Bias {ball.intermediate_differential != null ? ball.intermediate_differential.toFixed(3) : "—"}</span>
-        <span>{ball.finish_grit === "Polish" ? "Polish" : `${ball.finish_grit ?? "—"} grit`}</span>
+        <span>Finish: {ball.finish != null ? ball.finish : "—"}</span>
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: 4, marginTop: 2 }}>
         {METRIC_LABELS.map(m => (

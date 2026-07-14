@@ -7,6 +7,8 @@ A React + Vite app for comparing bowling balls by their motion characteristics. 
 - Search and filter the ball catalog by name, brand, or coverstock
 - Toggle between the full catalog and a filtered view of the balls currently selected for comparison
 - Compare selected balls with a radar chart across length, midlane read, flare, backend, and hook
+- Use the Arsenal Gap Advisor to enter player specs and identify three balls that fill a motion gap in the selected lineup
+- With a ball comparison of more than one ball, identify the closest pair in the bag and suggest a replacement selected from the full catalog
 - View each ball's core specs such as RG, differential, and intermediate differential
 - Score motion traits using a lightweight heuristic model based on the ball's physical attributes
 
@@ -31,12 +33,14 @@ src/
 │   ├── BallCard.jsx
 │   ├── Bar.jsx
 │   ├── ComparisonPanel.jsx
+│   ├── ArsenalAdvisor.jsx
 │   └── FilterBar.jsx
 ├── data/
 │   └── balls.json
 ├── index.css
 ├── lib/
 │   ├── ScoreBall.js
+│   ├── recommendArsenal.js
 │   └── constants.js
 └── main.jsx
 ```
@@ -60,6 +64,16 @@ Start the local dev server:
 npm run dev
 ```
 
+### AI recommendations
+
+The AI recommendation endpoint is available while running the Vite development server and as a Vercel serverless function in production. Copy `.env.example` to `.env`, then add your Anthropic API key:
+
+```env
+ANTHROPIC_API_KEY=your_key_here
+```
+
+Keep this key server-side. Do not use a `VITE_` prefix or commit the `.env` file.
+
 Create a production build:
 
 ```bash
@@ -81,4 +95,3 @@ This project demonstrates my ability to effectively direct AI tools while mainta
 ## Acknowledgements
 
 This project was completed as part of Anthropic's **AI Fluency: Framework & Foundations** course, exploring effective and responsible AI-assisted software development using Claude AI.
-

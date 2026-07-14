@@ -255,6 +255,23 @@
     "backend": "Strong/Continuous"
   },
   {
+    "id": "900-global-zen",
+    "brand": "900 Global",
+    "ball_name": "Zen",
+    "core_type": "Symmetric",
+    "core_name": "Meditate Symmetric",
+    "coverstock": "S77 Response Pearl",
+    "coverstock_type": "Pearl Reactive",
+    "finish": "1500 Grit Polished",
+    "finish_grit": 3000,
+    "rg": 2.49,
+    "differential": 0.051,
+    "differential_raw": null,
+    "intermediate_differential": 0.0,
+    "intermediate_differential_raw": null,
+    "backend": "Strong/Continuous"
+  },
+  {
     "id": "brunswick-combat",
     "brand": "Brunswick",
     "ball_name": "Combat",
@@ -1290,6 +1307,23 @@
     "intermediate_differential": 0.016,
     "intermediate_differential_raw": null,
     "backend": "Strong/Continuous (controlled)"
+  },
+  {
+    "id": "hammer-black-widow-2-0",
+    "brand": "Hammer",
+    "ball_name": "Black Widow 2.0 Hybrid",
+    "core_type": "Asymmetric",
+    "core_name": "Gas Mask",
+    "coverstock": "HK22 Aggression Hybrid",
+    "coverstock_type": "Hybrid Reactive",
+    "finish": "500/1000/1500 Siaair / Crown Factory Compound",
+    "finish_grit": 3000,
+    "rg": 2.5,
+    "differential": 0.058,
+    "differential_raw": null,
+    "intermediate_differential": 0.016,
+    "intermediate_differential_raw": null,
+    "backend": "Length with aggressive backend"
   },
   {
     "id": "hammer-3d-offset-assault",
