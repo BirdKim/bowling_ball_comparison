@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { Sparkles } from "lucide-react";
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from "recharts";
+import { Analytics } from "@vercel/analytics/react";
 import BALLS from "./data/balls.json";
 import { scoreBall } from "./lib/ScoreBall.js";
 import { METRIC_LABELS, LINE_COLORS } from "./lib/constants.js";
@@ -235,6 +236,7 @@ export default function App() {
           );
         })}
       </div>
+      <Analytics />
     </div>
   );
 }
