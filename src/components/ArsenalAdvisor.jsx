@@ -19,7 +19,7 @@ export function ArsenalAdvisor({ balls, selected, onAdd, onReplace }) {
       <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "12px 14px", borderBottom: "1px solid #4A3E2B" }}>
         <span style={{ display: "grid", placeItems: "center", width: 34, height: 34, borderRadius: "50%", background: "#C9A45C", color: "#171310" }}><Sparkles size={16} /></span>
         <div>
-          <div style={{ display: "block", fontFamily: "'Oswald', sans-serif", fontSize: 16 }}>Arsenal Gap Advisor</div>
+          <div style={{ display: "block", fontFamily: "'Oswald', sans-serif", fontSize: 16 }}>Arsenal Advisor</div>
           <div style={{ display: "block", color: "#B8AC93", fontSize: 11, marginTop: 2 }}>Find the next ball that best fills the gap.</div>
         </div>
       </div>

@@ -18,6 +18,8 @@ export default function App() {
   const [showBallRequestPage, setShowBallRequestPage] = useState(false);
   const [showAdvisorPanel, setShowAdvisorPanel] = useState(false);
 
+  const numBalls = BALLS.length;
+
   const brands = useMemo(() => ["All", ...Array.from(new Set(BALLS.map(b => b.brand))).sort()], []);
 
   const scored = useMemo(() => BALLS.map(b => ({ ball: b, scores: scoreBall(b) })), []);
@@ -76,14 +78,11 @@ export default function App() {
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" />
 
       <header style={{ marginBottom: 22 }}>
-        <div style={{ fontSize: 11, letterSpacing: 3, color: "#C9A45C", textTransform: "uppercase", marginBottom: 6 }}>
-          Published-Spec Motion Model
-        </div>
         <h1 style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 600, fontSize: 34, margin: 0, color: "#F5EEDD" }}>
-          Ball Motion Explorer
+          Build Your Arsenal
         </h1>
         <p style={{ color: "#9C8F76", fontSize: 13, marginTop: 6, maxWidth: 640, lineHeight: 1.5 }}>
-          142 balls across 9 brands, scored on RG, differential, intermediate differential, coverstock type, and factory finish only —
+          {numBalls} balls across 9 brands, scored on RG, differential, intermediate differential, coverstock type, and factory finish only —
           normalized to 0–100 under a fixed benchmark layout and house-shot assumption. No proprietary cover formulas are ranked.
         </p>
       </header>
