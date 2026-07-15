@@ -2,6 +2,12 @@
 
 Build Your Arsenal is a React + Vite app for comparing bowling balls by motion profile. The interface lets you browse a curated catalog, filter by brand or view only the selected balls, select balls for side-by-side comparison, and open compact side panels for an Arsenal Advisor and a ball-request form.
 
+## Live Demo
+
+A deployed version of the app is available on Vercel.
+
+- [Open the deployed app](bowling-arsenal-builder.vercel.app)
+
 ## What the app does
 
 - Search and filter the ball catalog by name, brand, or coverstock
@@ -12,53 +18,54 @@ Build Your Arsenal is a React + Vite app for comparing bowling balls by motion p
 - View core specs such as RG, differential, intermediate differential, finish, and coverstock
 - Score motion traits using a lightweight heuristic model based on each ball's physical attributes
 
-## Current dataset
+## Current Dataset
 
 The app currently loads 147 bowling balls across 9 brands, including 900 Global, Brunswick, DV8, Ebonite, Hammer, Motiv, Radical, Roto Grip, and Storm.
 
-## Tech stack
+## Tech Stack
 
 - React
 - Vite
 - JavaScript
 - Recharts
 - Lucide React
+- Vercel analytics & speed insights
 
-## Project structure
+## Project Structure
 
 ```text
-server
+server/
 ├── ballRequests.js
-├── data
+├── data/
 │   └── ball-requests.json
 └── recommendBalls.js
-src
+src/
 ├── App.jsx
 ├── brandColors.js
-├── components
+├── components/
 │   ├── ArsenalAdvisor.jsx
 │   ├── BallCard.jsx
 │   ├── BallRequestForm.jsx
 │   ├── Bar.jsx
 │   ├── ComparisonPanel.jsx
 │   └── FilterBar.jsx
-├── data
+├── data/
 │   └── balls.json
 ├── index.css
-├── lib
+├── lib/
 │   ├── ScoreBall.js
 │   ├── constants.js
 │   └── recommendArsenal.js
 └── main.jsx
 ```
 
-## Data and scoring
+## Data and Scoring
 
 The ball catalog lives in [src/data/balls.json](src/data/balls.json). Each ball includes specs such as RG, differential, intermediate differential, finish grit, and coverstock type. Finish values were normalized where needed, including Polish as roughly 4000 grit, Reacta Gloss as roughly 5000 grit, and Compound as roughly 3000 grit.
 
 The scoring logic in [src/lib/ScoreBall.js](src/lib/ScoreBall.js) normalizes those values and converts them into motion scores for the comparison view.
 
-## Local development
+## Local Development
 
 Install dependencies:
 
@@ -78,7 +85,7 @@ Create a production build:
 npm run build
 ```
 
-## Local backend and requests
+## Local Backend and Requests
 
 The app includes lightweight local API routes defined in [vite.config.js](vite.config.js):
 
